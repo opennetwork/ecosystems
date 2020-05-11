@@ -7,6 +7,17 @@
   resolved "https://registry.npmjs.org/@edwardmx/noop/-/noop-1.0.1.tgz#184b371febe5a719cd144fa8f6342a0e9023aecc"
   integrity sha512-X2gftuabV5jAs+SkdvhgDZQ9GErGtZXh0zMPKJbevjpsZF74ulMygg1eYlNn7lSLcDP9pFVwU2ScEmlS0fYjaA==
 
+"@opennetwork/environment@../../environment":
+  version "1.0.0"
+  dependencies:
+    "@edwardmx/noop" "^1.0.1"
+    "@opennetwork/http-representation" "^3.0.0"
+    "@opennetwork/http-representation-node" "^3.0.0"
+    "@opentelemetry/api" "^0.7.0"
+    abort-controller "^3.0.0"
+    dependency-graph "^0.9.0"
+    lit-html "^1.2.1"
+
 "@opennetwork/environment@https://github.com/opennetwork/environment.git":
   version "1.0.0"
   resolved "https://github.com/opennetwork/environment.git#e7f63d810b6809eaf394758ddcfbab740a510c7a"
