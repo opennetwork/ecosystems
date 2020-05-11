@@ -16,7 +16,7 @@
     "node": ">=14.1.0"
   },
   "dependencies": {
-    "@opennetwork/environment": "https://github.com/opennetwork/environment.git",
+    "@opennetwork/environment": "../../environment",
     "whatwg-url": "^8.1.0"
   },
   "devDependencies": {
