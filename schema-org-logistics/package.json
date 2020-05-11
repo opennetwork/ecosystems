@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "name": "@opennetwork/environments-schema-org-logistics",
+  "version": "1.0.0",
+  "main": "esnext/index.js",
+  "author": "Fabian Cook <hello@fabiancook.dev>",
+  "license": "MIT",
+  "private": false,
+  "description": "Logistics Environment utilising https://schema.org",
+  "exports": "esnext/index.js",
+  "scripts": {
+    "build": "rm -rf esnext && mkdir esnext && tsc && npm run postbuild",
+    "postbuild": "node scripts/post-build.js"
+  },
+  "engines": {
+    "node": ">=14.1.0"
+  },
+  "dependencies": {
+    "@opennetwork/environment": "https://github.com/opennetwork/environment.git",
+    "whatwg-url": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/whatwg-url": "^6.4.0",
+    "filehound": "^1.17.4"
+  }
+}
