@@ -13,7 +13,7 @@ export interface ServiceProperties {
     brand?: SchemaOrgEnvironmentThings["Brand"] | SchemaOrgEnvironmentThings["Organization"]
     broker?: SchemaOrgEnvironmentThings["Party"]
     category?: (URL | string | SchemaOrgEnvironmentThings["Thing"])[]
-    hasOfferCatalog?: SchemaOrgEnvironmentThings["Thing"]
+    hasOfferCatalog?: SchemaOrgEnvironmentThings["OfferCatalog"]
     hoursAvailable?: SchemaOrgEnvironmentThings["OpeningHoursSpecification"][]
     isRelatedTo?: (SchemaOrgEnvironmentThings["Product"] | SchemaOrgEnvironmentThings["Service"])[]
     isSimilarTo?: (SchemaOrgEnvironmentThings["Product"] | SchemaOrgEnvironmentThings["Service"])[]
