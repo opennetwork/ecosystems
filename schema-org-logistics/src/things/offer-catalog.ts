@@ -6,7 +6,7 @@ export interface OfferCatalogThing extends Thing<"OfferCatalog"> {
 }
 
 export interface OfferCatalogProperties {
-    itemListElement?: SchemaOrgEnvironmentThings["Offer"]
+    itemListElement?: (SchemaOrgEnvironmentThings["Offer"] | SchemaOrgEnvironmentThings["OfferCatalog"])[]
     numberOfItems?: number
 }
 

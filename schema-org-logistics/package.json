@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@opennetwork/environments-schema-org-logistics",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "esnext/index.js",
   "author": "Fabian Cook <hello@fabiancook.dev>",
   "license": "MIT",
