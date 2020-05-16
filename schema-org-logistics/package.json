@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@opennetwork/environments-schema-org-logistics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "esnext/index.js",
   "author": "Fabian Cook <hello@fabiancook.dev>",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "node": ">=14.1.0"
   },
   "dependencies": {
-    "@opennetwork/environment": "../../environment",
+    "@opennetwork/environment": "^1.0.2",
     "whatwg-url": "^8.1.0"
   },
   "devDependencies": {
