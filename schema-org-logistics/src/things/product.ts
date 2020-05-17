@@ -61,10 +61,3 @@ export interface Product extends ProductThing, ProductProperties {
 
 export type ProductReference = ProductThing | Product
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        Product: ProductThing | Product
-    }
-
-}

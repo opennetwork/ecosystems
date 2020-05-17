@@ -20,11 +20,3 @@ export interface ImageObject extends ImageObjectThing, ImageObjectProperties {
 
 export type ImageObjectReference = URL | ImageObjectThing | ImageObject
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        ImageObject: ImageObjectThing | ImageObject
-        Image: ImageObjectReference
-    }
-
-}

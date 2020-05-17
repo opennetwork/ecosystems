@@ -19,10 +19,3 @@ export interface OrderItem extends OrderItemThing {
 
 export type OrderItemReference = OrderItemThing | OrderItem
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        OrderItem: OrderItemReference
-    }
-
-}

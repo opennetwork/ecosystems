@@ -31,11 +31,3 @@ export interface Order extends OrderThing {
 }
 
 export type OrderReference = OrderThing | Order
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        Order: OrderReference
-    }
-
-}

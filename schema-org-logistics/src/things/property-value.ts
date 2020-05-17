@@ -19,12 +19,4 @@ export interface PropertyValue extends PropertyValueThing {
 
 export type PropertyValueReference = PropertyValueThing | PropertyValue
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        PropertyValue: PropertyValueReference
-    }
-
-}
-
 

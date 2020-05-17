@@ -24,10 +24,3 @@ export interface Thing<Type extends string = string, Context extends string = "h
 
 export type ThingReference = Thing | ThingLike | URL
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        Thing: ThingReference
-    }
-
-}

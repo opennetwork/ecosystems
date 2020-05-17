@@ -10,11 +10,3 @@ export interface BusinessFunction extends BusinessFunctionThing {
 }
 
 export type BusinessFunctionReference = string | BusinessFunctionThing | BusinessFunction
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        BusinessFunction: BusinessFunctionReference
-    }
-
-}

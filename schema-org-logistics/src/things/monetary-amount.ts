@@ -15,11 +15,3 @@ export interface MonetaryAmount extends MonetaryAmountThing {
 }
 
 export type MonetaryAmountReference = MonetaryAmountThing | MonetaryAmount
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        MonetaryAmount: MonetaryAmountReference
-    }
-
-}

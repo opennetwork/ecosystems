@@ -17,11 +17,3 @@ export interface WarrantyPromise extends WarrantyPromiseThing, WarrantyPromisePr
 }
 
 export type WarrantyPromiseReference = WarrantyPromiseThing | WarrantyPromise
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        WarrantyPromise: WarrantyPromiseReference
-    }
-
-}

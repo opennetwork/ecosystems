@@ -16,10 +16,3 @@ export interface ItemAvailability extends ItemAvailabilityThing, ItemAvailabilit
 
 export type ItemAvailabilityReference = URL | ItemAvailabilityThing | ItemAvailability
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        ItemAvailability: ItemAvailabilityReference
-    }
-
-}
