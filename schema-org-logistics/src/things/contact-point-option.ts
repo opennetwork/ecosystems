@@ -9,6 +9,8 @@ export interface ContactPointOption extends ContactPointOptionThing {
 
 }
 
+export type ContactPointOptionReference = ContactPointOptionThing | ContactPointOption
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {

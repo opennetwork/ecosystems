@@ -1,28 +1,36 @@
 // https://schema.org/ParcelDelivery
 import { Thing } from "./thing"
 import { URL } from "whatwg-url"
+import { PostalAddressReference } from "./postal-address"
+import { DeliveryEventReference } from "./delivery-event"
+import { DeliveryMethodReference } from "./delivery-method"
+import { ProductReference } from "./product"
+import { OrderReference } from "./order"
+import { PartyReference } from "./party"
 
 export interface ParcelDeliveryThing extends Thing<"ParcelDelivery"> {
 
 }
 
 export interface ParcelDelivery extends ParcelDeliveryThing {
-    deliveryAddress?: SchemaOrgEnvironmentThings["PostalAddress"]
-    deliveryStatus?: SchemaOrgEnvironmentThings["DeliveryEvent"]
+    deliveryAddress?: PostalAddressReference
+    deliveryStatus?: DeliveryEventReference
     expectedArrivalFrom?: Date
     expectedArrivalUntil?: Date
-    hasDeliveryMethod?: SchemaOrgEnvironmentThings["DeliveryMethod"]
-    itemShipped?: SchemaOrgEnvironmentThings["Product"]
-    partOfOrder?: SchemaOrgEnvironmentThings["Order"]
-    provider?: SchemaOrgEnvironmentThings["Party"]
+    hasDeliveryMethod?: DeliveryMethodReference
+    itemShipped?: ProductReference
+    partOfOrder?: OrderReference
+    provider?: PartyReference
     trackingNumber?: string
     trackingUrl?: URL
 }
 
+export type ParcelDeliveryReference = ParcelDelivery
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        ParcelDelivery: ParcelDeliveryThing | ParcelDelivery
+        ParcelDelivery: ParcelDeliveryReference
     }
 
 }

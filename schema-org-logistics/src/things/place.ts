@@ -13,10 +13,12 @@ export interface Place extends PlaceThing, PlaceProperties {
 
 }
 
+export type PlaceReference = PlaceThing | Place
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        Place: PlaceThing | Place
+        Place: PlaceReference
     }
 
 }

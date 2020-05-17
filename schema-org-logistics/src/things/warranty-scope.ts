@@ -14,10 +14,12 @@ export interface WarrantyScope extends WarrantyScopeThing, WarrantyScopeProperti
 
 }
 
+export type WarrantyScopeReference = URL | WarrantyScopeThing | WarrantyScope
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        WarrantyScope: URL | WarrantyScopeThing | WarrantyScope
+        WarrantyScope: WarrantyScopeReference
     }
 
 }

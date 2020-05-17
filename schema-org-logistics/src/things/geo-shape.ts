@@ -13,10 +13,12 @@ export interface GeoShape extends GeoShapeThing, GeoShapeProperties {
 
 }
 
+export type GeoShapeReference = GeoShapeThing | GeoShape
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        GeoShape: GeoShapeThing | GeoShape
+        GeoShape: GeoShapeReference
     }
 
 }

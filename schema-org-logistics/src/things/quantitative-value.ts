@@ -13,10 +13,12 @@ export interface QuantitativeValue extends QuantitativeValueThing, QuantitativeV
 
 }
 
+export type QuantitativeValueReference = QuantitativeValueThing | QuantitativeValue
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        QuantitativeValue: QuantitativeValueThing | QuantitativeValue
+        QuantitativeValue: QuantitativeValueReference
     }
 
 }

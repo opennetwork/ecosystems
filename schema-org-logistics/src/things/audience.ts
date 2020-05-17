@@ -13,10 +13,12 @@ export interface Audience extends AudienceThing, AudienceProperties {
 
 }
 
+export type AudienceReference = AudienceThing | Audience
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        Audience: AudienceThing | Audience
+        Audience: AudienceReference
     }
 
 }

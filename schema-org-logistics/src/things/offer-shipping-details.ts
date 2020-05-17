@@ -1,17 +1,20 @@
 // https://schema.org/OfferShippingDetails
 import { Thing } from "./thing"
 import { URL } from "whatwg-url"
+import { ShippingDeliveryTimeReference } from "./shipping-delivery-time"
+import { DefinedRegionReference } from "./defined-region"
+import { MonetaryAmountReference } from "./monetary-amount"
 
 export interface OfferShippingDetailsThing extends Thing<"OfferShippingDetails"> {
 
 }
 
 export interface OfferShippingDetailsProperties {
-    deliveryTime?: SchemaOrgEnvironmentThings["ShippingDeliveryTime"]
+    deliveryTime?: ShippingDeliveryTimeReference
     doesNotShip?: boolean
-    shippingDestination?: SchemaOrgEnvironmentThings["DefinedRegion"]
+    shippingDestination?: DefinedRegionReference
     shippingLabel?: string
-    shippingRate?: SchemaOrgEnvironmentThings["MonetaryAmount"]
+    shippingRate?: MonetaryAmountReference
     shippingSettingsLink?: URL
     transitTimeLabel?: string
 }
@@ -20,10 +23,12 @@ export interface OfferShippingDetails extends OfferShippingDetailsThing, OfferSh
 
 }
 
+export type OfferShippingDetailsReference = OfferShippingDetailsThing | OfferShippingDetails
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        OfferShippingDetails: OfferShippingDetailsThing | OfferShippingDetails
+        OfferShippingDetails: OfferShippingDetailsReference
     }
 
 }

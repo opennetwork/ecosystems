@@ -1,31 +1,41 @@
 // https://schema.org/Order
 import { Thing } from "./thing"
+import { OfferReference } from "./offer"
+import { AggregateOfferReference } from "./aggregate-offer"
+import { PartyReference } from "./party"
+import { ParcelDeliveryReference } from "./parcel-delivery"
+import { OrderStatusReference } from "./order-status"
+import { OrderItemReference } from "./order-item"
+import { PostalAddressReference } from "./postal-address"
+import { InvoiceReference } from "./invoice"
 
 export interface OrderThing extends Thing<"Order"> {
 
 }
 
 export interface Order extends OrderThing {
-    acceptedOffer?: SchemaOrgEnvironmentThings["Offer"] | SchemaOrgEnvironmentThings["AggregateOffer"]
-    broker?: SchemaOrgEnvironmentThings["Party"]
+    acceptedOffer?: OfferReference | AggregateOfferReference
+    broker?: PartyReference
     confirmationNumber?: string
-    customer?: SchemaOrgEnvironmentThings["Party"]
+    customer?: PartyReference
     discount?: string
     discountCode?: string
     isGift?: boolean
     orderDate: Date
-    orderDelivery?: SchemaOrgEnvironmentThings["ParcelDelivery"]
+    orderDelivery?: ParcelDeliveryReference
     orderNumber: string
-    orderStatus: SchemaOrgEnvironmentThings["OrderStatus"]
-    orderedItem: SchemaOrgEnvironmentThings["OrderItem"][]
-    billingAddress?: SchemaOrgEnvironmentThings["PostalAddress"]
-    partOfInvoice?: SchemaOrgEnvironmentThings["Invoice"]
+    orderStatus: OrderStatusReference
+    orderedItem: OrderItemReference[]
+    billingAddress?: PostalAddressReference
+    partOfInvoice?: InvoiceReference
 }
+
+export type OrderReference = OrderThing | Order
 
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        Order: OrderThing | Order
+        Order: OrderReference
     }
 
 }

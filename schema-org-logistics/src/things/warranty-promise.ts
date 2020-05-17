@@ -1,23 +1,27 @@
 // https://schema.org/WarrantyPromise
 import { Thing } from "./thing"
+import { QuantitativeValueReference } from "./quantitative-value"
+import { WarrantyScopeReference } from "./warranty-scope"
 
 export interface WarrantyPromiseThing extends Thing<"WarrantyPromise"> {
 
 }
 
 export interface WarrantyPromiseProperties {
-    durationOfWarranty?: SchemaOrgEnvironmentThings["QuantitativeValue"]
-    warrantyScope?: SchemaOrgEnvironmentThings["WarrantyScope"]
+    durationOfWarranty?: QuantitativeValueReference
+    warrantyScope?: WarrantyScopeReference
 }
 
 export interface WarrantyPromise extends WarrantyPromiseThing, WarrantyPromiseProperties {
 
 }
 
+export type WarrantyPromiseReference = WarrantyPromiseThing | WarrantyPromise
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        WarrantyPromise: WarrantyPromiseThing | WarrantyPromise
+        WarrantyPromise: WarrantyPromiseReference
     }
 
 }

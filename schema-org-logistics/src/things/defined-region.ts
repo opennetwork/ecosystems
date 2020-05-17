@@ -13,10 +13,12 @@ export interface DefinedRegion extends DefinedRegionThing, DefinedRegionProperti
 
 }
 
+export type DefinedRegionReference = DefinedRegionThing | DefinedRegion
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        DefinedRegion: DefinedRegionThing | DefinedRegion
+        DefinedRegion: DefinedRegionReference
     }
 
 }

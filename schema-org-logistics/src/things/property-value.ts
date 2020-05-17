@@ -17,10 +17,12 @@ export interface PropertyValue extends PropertyValueThing {
     valueReference?: unknown
 }
 
+export type PropertyValueReference = PropertyValueThing | PropertyValue
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        PropertyValue: PropertyValueThing | PropertyValue
+        PropertyValue: PropertyValueReference
     }
 
 }

@@ -1,66 +1,85 @@
 // https://schema.org/Offer
-import { Thing } from "./thing"
-import { URL } from "whatwg-url"
+import { Thing, ThingReference } from "./thing"
+import { GeoShapeReference } from "./geo-shape"
+import { PlaceReference } from "./place"
+import { PaymentMethodReference } from "./payment-method"
+import { LoanOrCreditReference } from "./loan-or-credit"
+import { Duration } from "./duration"
+import { BusinessFunctionReference } from "./business-function"
+import { ItemAvailabilityReference } from "./item-availability"
+import { DeliveryMethodReference } from "./delivery-method"
+import { TypeAndQuantityNodeReference } from "./type-and-quantity-node"
+import { QuantitativeValueReference } from "./quantitative-value"
+import { OfferItemConditionReference } from "./offer-item-condition"
+import { AggregateOfferReference } from "./aggregate-offer"
+import { ProductReference } from "./product"
+import { ServiceReference } from "./service"
+import { PartyReference } from "./party"
+import { WarrantyPromiseReference } from "./warranty-promise"
+import { OfferShippingDetailsReference } from "./offer-shipping-details"
+import { ReviewReference } from "./review"
 
 export interface OfferThing extends Thing<"Offer"> {
 
 }
 
-type Region = SchemaOrgEnvironmentThings["GeoShape"] | SchemaOrgEnvironmentThings["Place"] | string
+type Region = GeoShapeReference | PlaceReference | string
 
 export interface OfferProperties {
-    acceptedPaymentMethod?: (SchemaOrgEnvironmentThings["PaymentMethod"] | SchemaOrgEnvironmentThings["LoanOrCredit"])[]
-    addOn?: SchemaOrgEnvironmentThings["Offer"]
-    advanceBookingRequirement?: SchemaOrgEnvironmentThings["Duration"]
-    aggregateRating?: SchemaOrgEnvironmentThings["Thing"]
-    areaServed?: SchemaOrgEnvironmentThings["Thing"]
-    availability?: SchemaOrgEnvironmentThings["ItemAvailability"]
+    acceptedPaymentMethod?: (PaymentMethodReference | LoanOrCreditReference)[]
+    addOn?: OfferReference
+    advanceBookingRequirement?: Duration
+    aggregateRating?: ThingReference
+    areaServed?: ThingReference
+    availability?: ItemAvailabilityReference
     availabilityEnds?: Date
     availabilityStarts?: Date
-    availableAtOrFrom?: SchemaOrgEnvironmentThings["Place"]
-    availableDeliveryMethod?: SchemaOrgEnvironmentThings["DeliveryMethod"]
-    businessFunction?: SchemaOrgEnvironmentThings["BusinessFunction"]
-    category?: string | URL | SchemaOrgEnvironmentThings["Thing"]
-    deliveryLeadTime?: SchemaOrgEnvironmentThings["Thing"]
-    eligibleCustomerType?: SchemaOrgEnvironmentThings["Thing"]
-    eligibleDuration?: SchemaOrgEnvironmentThings["Thing"]
-    eligibleQuantity?: SchemaOrgEnvironmentThings["Thing"]
+    availableAtOrFrom?: PlaceReference
+    availableDeliveryMethod?: DeliveryMethodReference
+    businessFunction?: BusinessFunctionReference
+    category?: string | ThingReference
+    deliveryLeadTime?: ThingReference
+    eligibleCustomerType?: ThingReference
+    eligibleDuration?: ThingReference
+    eligibleQuantity?: ThingReference
     eligibleRegion?: Region
-    eligibleTransactionVolume?: SchemaOrgEnvironmentThings["Thing"]
+    eligibleTransactionVolume?: ThingReference
     gtin?: string
     gtin8?: string
     gtin12?: string
     gtin14?: string
-    includesObject?: SchemaOrgEnvironmentThings["TypeAndQuantityNode"]
+    includesObject?: TypeAndQuantityNodeReference
     ineligibleRegion?: Region
-    inventoryLevel?: SchemaOrgEnvironmentThings["QuantitativeValue"]
-    itemCondition?: SchemaOrgEnvironmentThings["OfferItemCondition"]
-    itemOffered?: SchemaOrgEnvironmentThings["AggregateOffer"] | SchemaOrgEnvironmentThings["Product"] | SchemaOrgEnvironmentThings["Service"]
-    leaseLength?: SchemaOrgEnvironmentThings["QuantitativeValue"] | SchemaOrgEnvironmentThings["Duration"]
+    inventoryLevel?: QuantitativeValueReference
+    itemCondition?: OfferItemConditionReference
+    itemOffered?: AggregateOfferReference | ProductReference | ServiceReference
+    leaseLength?: QuantitativeValueReference | Duration
     mpn?: string
-    offeredBy?: SchemaOrgEnvironmentThings["Party"]
+    offeredBy?: PartyReference
     price?: number | string
     priceCurrency?: string
-    priceSpecification?: SchemaOrgEnvironmentThings["Thing"]
+    priceSpecification?: ThingReference
     priceValidUntil?: number
-    reviews?: SchemaOrgEnvironmentThings["Review"][]
-    seller?: SchemaOrgEnvironmentThings["Party"]
+    reviews?: ReviewReference[]
+    seller?: PartyReference
     serialNumber?: string
-    shippingDetails?: SchemaOrgEnvironmentThings["OfferShippingDetails"]
+    shippingDetails?: OfferShippingDetailsReference
     sku?: string
     validFrom?: Date
     validThrough?: Date
-    warranty?: SchemaOrgEnvironmentThings["WarrantyPromise"]
+    warranty?: WarrantyPromiseReference
 }
 
 export interface Offer extends OfferThing, OfferProperties {
 
 }
 
+export type OfferReference = OfferThing | Offer
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        Offer: OfferThing | Offer
+        Offer: OfferReference
     }
 
 }
