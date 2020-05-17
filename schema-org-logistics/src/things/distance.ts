@@ -9,10 +9,12 @@ export interface Distance extends DistanceThing {
 
 }
 
+export type DistanceReference = string | DistanceThing | Distance
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        Distance: string | DistanceThing | Distance
+        Distance: DistanceReference
     }
 
 }

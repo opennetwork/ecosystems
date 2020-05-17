@@ -1,21 +1,25 @@
 // https://schema.org/ShippingDeliveryTime
 import { Thing } from "./thing"
+import { QuantitativeValueReference } from "./quantitative-value"
+import { OpeningHoursSpecificationReference } from "./opening-hours-specification"
 
 export interface ShippingDeliveryTimeThing extends Thing<"ShippingDeliveryTime"> {
 
 }
 
 export interface ShippingDeliveryTime extends ShippingDeliveryTimeThing {
-    businessDays?: SchemaOrgEnvironmentThings["OpeningHoursSpecification"][]
+    businessDays?: OpeningHoursSpecificationReference[]
     cutoffTime?: string
-    handlingTime?: SchemaOrgEnvironmentThings["QuantitativeValue"]
-    transitTime?: SchemaOrgEnvironmentThings["QuantitativeValue"]
+    handlingTime?: QuantitativeValueReference
+    transitTime?: QuantitativeValueReference
 }
+
+export type ShippingDeliveryTimeReference = ShippingDeliveryTimeThing | ShippingDeliveryTime
 
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        ShippingDeliveryTime: ShippingDeliveryTimeThing | ShippingDeliveryTime
+        ShippingDeliveryTime: ShippingDeliveryTimeReference
     }
 
 }

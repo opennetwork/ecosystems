@@ -10,10 +10,12 @@ export interface DeliveryMethod extends DeliveryMethodThing {
 
 }
 
+export type DeliveryMethodReference = URL | DeliveryMethodThing | DeliveryMethod
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        DeliveryMethod: URL | DeliveryMethodThing | DeliveryMethod
+        DeliveryMethod: DeliveryMethodReference
     }
 
 }

@@ -1,51 +1,65 @@
 // https://schema.org/Product
-import { Thing } from "./thing"
+import { Thing, ThingReference } from "./thing"
 import { URL } from "whatwg-url"
+import { AudienceReference } from "./audience"
+import { BrandReference } from "./brand"
+import { OrganizationReference } from "./organization"
+import { ImageObjectReference } from "./image-object"
+import { DemandReference } from "./demand"
+import { OfferReference } from "./offer"
+import { PartyReference } from "./party"
+import { ReviewReference } from "./review"
+import { DistanceReference } from "./distance"
+import { QuantitativeValueReference } from "./quantitative-value"
+import { ServiceReference } from "./service"
+import { ProductModelReference } from "./product-model"
 
 export interface ProductThing extends Thing<"Product"> {
 
 }
 
 export interface ProductProperties {
-    aggregateRating?: SchemaOrgEnvironmentThings["Thing"]
-    audience?: SchemaOrgEnvironmentThings["Audience"]
+    aggregateRating?: ThingReference
+    audience?: AudienceReference
     awards?: string[]
-    brand?: SchemaOrgEnvironmentThings["Brand"] | SchemaOrgEnvironmentThings["Organization"]
-    category?: (URL | string | SchemaOrgEnvironmentThings["Thing"])[]
+    brand?: BrandReference | OrganizationReference
+    category?: (URL | string | ThingReference)[]
     color?: string
-    depth?: SchemaOrgEnvironmentThings["Distance"] | SchemaOrgEnvironmentThings["QuantitativeValue"]
+    depth?: DistanceReference | QuantitativeValueReference
     gtin?: string
     gtin8?: string
     gtin12?: string
     gtin13?: string
     gtin14?: string
     // TODO
-    hasMerchantReturnPolicy?: SchemaOrgEnvironmentThings["Thing"]
-    height?: SchemaOrgEnvironmentThings["Distance"] | SchemaOrgEnvironmentThings["QuantitativeValue"]
-    isAccessoryOrSparePartFor?: SchemaOrgEnvironmentThings["Product"][]
-    isConsumableFor?: SchemaOrgEnvironmentThings["Product"][]
-    isRelatedTo?: (SchemaOrgEnvironmentThings["Product"] | SchemaOrgEnvironmentThings["Service"])[]
-    isSimilarTo?: (SchemaOrgEnvironmentThings["Product"] | SchemaOrgEnvironmentThings["Service"])[]
-    logo?: SchemaOrgEnvironmentThings["Image"]
-    manufacturer?: SchemaOrgEnvironmentThings["Party"]
-    material?: (SchemaOrgEnvironmentThings["Product"] | string | URL)[]
-    model?: SchemaOrgEnvironmentThings["ProductModel"]
+    hasMerchantReturnPolicy?: ThingReference
+    height?: DistanceReference | QuantitativeValueReference
+    isAccessoryOrSparePartFor?: ProductReference[]
+    isConsumableFor?: ProductReference[]
+    isRelatedTo?: (ProductReference | ServiceReference)[]
+    isSimilarTo?: (ProductReference | ServiceReference)[]
+    logo?: ImageObjectReference
+    manufacturer?: PartyReference
+    material?: (ProductReference | string | URL)[]
+    model?: ProductModelReference
     mpn?: string
     nsn?: string
-    offers?: (SchemaOrgEnvironmentThings["Demand"] | SchemaOrgEnvironmentThings["Offer"])[]
+    offers?: (DemandReference | OfferReference)[]
     productID?: string
     productionDate?: Date
     purchaseDate?: Date
     releaseDate?: Date
-    review?: SchemaOrgEnvironmentThings["Review"]
+    review?: ReviewReference
     sku?: string
     slogan?: string
-    weight?: SchemaOrgEnvironmentThings["QuantitativeValue"]
-    width?: SchemaOrgEnvironmentThings["Distance"] | SchemaOrgEnvironmentThings["QuantitativeValue"]
+    weight?: QuantitativeValueReference
+    width?: DistanceReference | QuantitativeValueReference
 }
 
 export interface Product extends ProductThing, ProductProperties {
 }
+
+export type ProductReference = ProductThing | Product
 
 declare global {
 

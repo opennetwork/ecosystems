@@ -9,10 +9,12 @@ export interface Invoice extends InvoiceThing {
 
 }
 
+export type InvoiceReference = InvoiceThing | Invoice
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        Invoice: InvoiceThing | Invoice
+        Invoice: InvoiceReference
     }
 
 }

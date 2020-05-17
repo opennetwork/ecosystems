@@ -1,13 +1,14 @@
 // https://schema.org/PostalAddress
 import { Thing } from "./thing"
 import { ContactPointProperties } from "./contact-point"
+import { CountryReference } from "./country"
 
 export interface PostalAddressThing extends Thing<"PostalAddress"> {
 
 }
 
 export interface PostalAddress extends PostalAddressThing, ContactPointProperties {
-    addressCountry?: string | SchemaOrgEnvironmentThings["Country"]
+    addressCountry?: string | CountryReference
     addressLocality?: string
     addressRegion?: string
     postOfficeBoxNumber?: string
@@ -15,10 +16,12 @@ export interface PostalAddress extends PostalAddressThing, ContactPointPropertie
     streetAddress?: string
 }
 
+export type PostalAddressReference = PostalAddressThing | PostalAddress
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        PostalAddress: PostalAddressThing | PostalAddress
+        PostalAddress: PostalAddressReference
     }
 
 }

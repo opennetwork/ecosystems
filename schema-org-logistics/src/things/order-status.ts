@@ -9,10 +9,12 @@ export interface OrderStatus extends OrderStatusThing {
 
 }
 
+export type OrderStatusReference = OrderStatusThing | OrderStatus
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        OrderStatus: OrderStatusThing | OrderStatus
+        OrderStatus: OrderStatusReference
     }
 
 }

@@ -14,10 +14,12 @@ export interface FinancialProduct extends FinancialProductThing, FinancialProduc
 
 }
 
+export type FinancialProductReference = FinancialProductThing | FinancialProduct
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        FinancialProduct: FinancialProductThing | FinancialProduct
+        FinancialProduct: FinancialProductReference
     }
 
 }

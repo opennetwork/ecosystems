@@ -1,18 +1,21 @@
 // https://schema.org/AggregateOffer
 import { Thing } from "./thing"
+import { OfferReference } from "./offer"
 
 export interface AggregateOfferThing extends Thing<"AggregateOffer"> {
 
 }
 
 export interface AggregateOffer extends AggregateOfferThing {
-    offers?: SchemaOrgEnvironmentThings["Offer"][]
+    offers?: OfferReference[]
 }
+
+export type AggregateOfferReference = AggregateOfferThing | AggregateOffer
 
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        AggregateOffer: AggregateOfferThing | AggregateOffer
+        AggregateOffer: AggregateOfferReference
     }
 
 }

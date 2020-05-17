@@ -7,19 +7,21 @@ export interface ProductModelThing extends Thing<"ProductModel"> {
 }
 
 export interface ProductModelProperties extends ProductProperties {
-    isVariantOf?: SchemaOrgEnvironmentThings["ProductModel"][]
-    predecessorOf?: SchemaOrgEnvironmentThings["ProductModel"][]
-    successorOf?: SchemaOrgEnvironmentThings["ProductModel"][]
+    isVariantOf?: ProductModelReference[]
+    predecessorOf?: ProductModelReference[]
+    successorOf?: ProductModelReference[]
 }
 
 export interface ProductModel extends ProductModelThing, ProductModelProperties {
 
 }
 
+export type ProductModelReference = ProductModelThing | ProductModel
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        ProductModel: ProductModelThing | ProductModel
+        ProductModel: ProductModelReference
     }
 
 }

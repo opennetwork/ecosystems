@@ -13,19 +13,21 @@ export interface Thing<Type extends string = string, Context extends string = "h
     name?: string
     additionalType?: URL
     alternateName?: string
-    identifier?: URL | string | Thing
+    identifier?: string | ThingReference
     sameAs?: URL
-    subjectOf?: Thing
-    mainEntityOfPage?: URL | Thing
-    image?: Thing | URL
+    subjectOf?: ThingReference
+    mainEntityOfPage?: ThingReference
+    image?: ThingReference
     description?: string
     disambiguatingDescription?: string
 }
 
+export type ThingReference = Thing | ThingLike | URL
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        Thing: Thing | ThingLike | URL
+        Thing: ThingReference
     }
 
 }

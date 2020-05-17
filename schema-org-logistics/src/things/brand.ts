@@ -1,14 +1,16 @@
 // https://schema.org/Brand
-import { Thing } from "./thing"
+import { Thing, ThingReference } from "./thing"
+import { ImageObjectReference } from "./image-object"
+import { ReviewReference } from "./review"
 
 export interface BrandThing extends Thing<"Brand"> {
 
 }
 
 export interface BrandProperties {
-    aggregateRating?: SchemaOrgEnvironmentThings["Thing"]
-    logo?: SchemaOrgEnvironmentThings["Image"]
-    review?: SchemaOrgEnvironmentThings["Review"]
+    aggregateRating?: ThingReference
+    logo?: ImageObjectReference
+    review?: ReviewReference
     slogan?: string
 }
 
@@ -16,10 +18,12 @@ export interface Brand extends BrandThing, BrandProperties {
 
 }
 
+export type BrandReference = BrandThing | Brand
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        Brand: BrandThing | Brand
+        Brand: BrandReference
     }
 
 }

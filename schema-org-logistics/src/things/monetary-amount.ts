@@ -1,5 +1,5 @@
 // https://schema.org/MonetaryAmount
-import { Thing } from "./thing"
+import { Thing, ThingReference } from "./thing"
 
 export interface MonetaryAmountThing extends Thing<"MonetaryAmount"> {
 
@@ -11,13 +11,15 @@ export interface MonetaryAmount extends MonetaryAmountThing {
     minValue?: number
     validFrom?: Date
     validThrough?: Date
-    value?: boolean | number | string | SchemaOrgEnvironmentThings["Thing"]
+    value?: boolean | number | string | ThingReference
 }
+
+export type MonetaryAmountReference = MonetaryAmountThing | MonetaryAmount
 
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        MonetaryAmount: MonetaryAmountThing | MonetaryAmount
+        MonetaryAmount: MonetaryAmountReference
     }
 
 }

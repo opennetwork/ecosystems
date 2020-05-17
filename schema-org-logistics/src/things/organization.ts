@@ -9,10 +9,12 @@ export interface Organization extends OrganizationThing {
 
 }
 
+export type OrganizationReference = OrganizationThing | Organization
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        Organization: OrganizationThing | Organization
+        Organization: OrganizationReference
     }
 
 }

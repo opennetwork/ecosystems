@@ -13,10 +13,12 @@ export interface Review extends ReviewThing, ReviewProperties {
 
 }
 
+export type ReviewReference = ReviewThing | Review
+
 declare global {
 
     interface SchemaOrgEnvironmentThings {
-        Review: ReviewThing | Review
+        Review: ReviewReference
     }
 
 }
