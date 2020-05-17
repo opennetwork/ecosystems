@@ -12,10 +12,3 @@ export interface DayOfWeek extends DayOfWeekThing {
 
 export type DayOfWeekReference = URL | DayOfWeekThing | DayOfWeek
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        DayOfWeek: DayOfWeekReference
-    }
-
-}

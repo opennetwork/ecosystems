@@ -27,11 +27,3 @@ export interface ParcelDelivery extends ParcelDeliveryThing {
 
 export type ParcelDeliveryReference = ParcelDelivery
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        ParcelDelivery: ParcelDeliveryReference
-    }
-
-}
-

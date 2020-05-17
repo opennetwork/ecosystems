@@ -45,15 +45,3 @@ export * from "./time"
 export * from "./type-and-quantity-node"
 export * from "./warranty-promise"
 export * from "./warranty-scope"
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-
-    }
-
-}
-
-export {
-    SchemaOrgEnvironmentThings
-}

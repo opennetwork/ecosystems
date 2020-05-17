@@ -19,11 +19,3 @@ export interface Brand extends BrandThing, BrandProperties {
 }
 
 export type BrandReference = BrandThing | Brand
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        Brand: BrandReference
-    }
-
-}

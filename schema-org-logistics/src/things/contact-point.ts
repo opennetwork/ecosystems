@@ -25,10 +25,3 @@ export interface ContactPoint extends ContactPointThing, ContactPointProperties 
 
 export type ContactPointReference = ContactPointThing | ContactPoint
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        ContactPoint: ContactPointReference
-    }
-
-}

@@ -11,11 +11,3 @@ export interface AggregateOffer extends AggregateOfferThing {
 }
 
 export type AggregateOfferReference = AggregateOfferThing | AggregateOffer
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        AggregateOffer: AggregateOfferReference
-    }
-
-}

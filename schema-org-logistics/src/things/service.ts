@@ -44,10 +44,3 @@ export interface Service extends ServiceThing, ServiceProperties {
 
 export type ServiceReference = ServiceThing | Service
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        Service: ServiceReference
-    }
-
-}

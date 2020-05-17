@@ -12,10 +12,3 @@ export interface Country extends CountryThing, PlaceProperties {
 
 export type CountryReference = CountryThing | Country
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        Country: CountryReference
-    }
-
-}

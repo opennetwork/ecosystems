@@ -11,11 +11,3 @@ export interface Person extends PersonThing {
 }
 
 export type PersonReference = PersonThing | Person
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        Person: PersonReference
-    }
-
-}

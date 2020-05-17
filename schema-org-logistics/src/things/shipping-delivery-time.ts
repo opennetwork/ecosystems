@@ -16,10 +16,3 @@ export interface ShippingDeliveryTime extends ShippingDeliveryTimeThing {
 
 export type ShippingDeliveryTimeReference = ShippingDeliveryTimeThing | ShippingDeliveryTime
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        ShippingDeliveryTime: ShippingDeliveryTimeReference
-    }
-
-}

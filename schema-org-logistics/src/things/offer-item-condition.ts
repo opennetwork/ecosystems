@@ -12,10 +12,3 @@ export interface OfferItemCondition extends OfferItemConditionThing {
 
 export type OfferItemConditionReference = URL | OfferItemConditionThing | OfferItemCondition
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        OfferItemCondition: OfferItemConditionReference
-    }
-
-}

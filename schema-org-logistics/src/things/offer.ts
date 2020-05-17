@@ -75,11 +75,3 @@ export interface Offer extends OfferThing, OfferProperties {
 }
 
 export type OfferReference = OfferThing | Offer
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        Offer: OfferReference
-    }
-
-}

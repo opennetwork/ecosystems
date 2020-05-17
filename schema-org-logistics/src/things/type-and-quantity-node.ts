@@ -19,10 +19,3 @@ export interface TypeAndQuantityNode extends TypeAndQuantityNodeThing {
 
 export type TypeAndQuantityNodeReference = TypeAndQuantityNodeThing | TypeAndQuantityNode
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        TypeAndQuantityNode: TypeAndQuantityNodeReference
-    }
-
-}

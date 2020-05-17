@@ -11,11 +11,3 @@ export interface DeliveryEvent extends DeliveryEventThing {
 }
 
 export type DeliveryEventReference = URL | DeliveryEventThing | DeliveryEvent
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        DeliveryEvent: DeliveryEventReference
-    }
-
-}

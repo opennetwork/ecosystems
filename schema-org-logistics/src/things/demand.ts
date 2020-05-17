@@ -15,11 +15,3 @@ export interface Demand extends DemandThing, DemandProperties {
 }
 
 export type DemandReference = DemandThing | Demand
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        Demand: DemandReference
-    }
-
-}

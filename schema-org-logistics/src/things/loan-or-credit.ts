@@ -24,10 +24,3 @@ export interface LoanOrCredit extends LoanOrCreditThing, LoanOrCreditProperties 
 
 export type LoanOrCreditReference = LoanOrCreditThing | LoanOrCredit
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        LoanOrCredit: LoanOrCreditReference
-    }
-
-}

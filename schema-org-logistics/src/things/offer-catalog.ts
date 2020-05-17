@@ -16,11 +16,3 @@ export interface OfferCatalog extends OfferCatalogThing, OfferCatalogProperties 
 }
 
 export type OfferCatalogReference = OfferCatalogThing | OfferCatalog
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        OfferCatalog: OfferCatalogReference
-    }
-
-}

@@ -17,11 +17,3 @@ export interface ProductModel extends ProductModelThing, ProductModelProperties 
 }
 
 export type ProductModelReference = ProductModelThing | ProductModel
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        ProductModel: ProductModelReference
-    }
-
-}

@@ -17,11 +17,3 @@ export interface PostalAddress extends PostalAddressThing, ContactPointPropertie
 }
 
 export type PostalAddressReference = PostalAddressThing | PostalAddress
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        PostalAddress: PostalAddressReference
-    }
-
-}

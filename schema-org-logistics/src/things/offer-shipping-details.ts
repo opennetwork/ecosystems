@@ -24,11 +24,3 @@ export interface OfferShippingDetails extends OfferShippingDetailsThing, OfferSh
 }
 
 export type OfferShippingDetailsReference = OfferShippingDetailsThing | OfferShippingDetails
-
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        OfferShippingDetails: OfferShippingDetailsReference
-    }
-
-}

@@ -17,10 +17,3 @@ export interface OpeningHoursSpecification extends OpeningHoursSpecificationThin
 
 export type OpeningHoursSpecificationReference = OpeningHoursSpecificationThing | OpeningHoursSpecification
 
-declare global {
-
-    interface SchemaOrgEnvironmentThings {
-        OpeningHoursSpecification: OpeningHoursSpecificationReference
-    }
-
-}
