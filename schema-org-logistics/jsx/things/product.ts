@@ -1,4 +1,5 @@
-import { createToken, TokenVNodeBase, TokenVNodeFn } from "@opennetwork/vnode";import { Thing, ThingReference } from "./thing"
+import { createToken, TokenVNodeBase, TokenVNodeFn } from "@opennetwork/vnode";
+import { Thing, ThingReference } from "./thing"
 import { URL } from "whatwg-url"
 import { AudienceReference } from "./audience"
 import { BrandReference } from "./brand"
@@ -60,13 +61,16 @@ export interface Product extends ProductThing, ProductProperties {
 
 export type ProductReference = ProductThing | Product
 
+
 export const ProductThingSymbol = Symbol("ProductThing");
 export type ProductThingToken = TokenVNodeBase<typeof ProductThingSymbol, ProductThing>;
 export type ProductThingTokenFn = TokenVNodeFn<typeof ProductThingSymbol, ProductThing>;
-export const ProductThing: ProductThingTokenFn = createToken(ProductThingSymbol);export const ProductPropertiesSymbol = Symbol("ProductProperties");
+export const ProductThing: ProductThingTokenFn = createToken(ProductThingSymbol);
+export const ProductPropertiesSymbol = Symbol("ProductProperties");
 export type ProductPropertiesToken = TokenVNodeBase<typeof ProductPropertiesSymbol, ProductProperties>;
 export type ProductPropertiesTokenFn = TokenVNodeFn<typeof ProductPropertiesSymbol, ProductProperties>;
-export const ProductProperties: ProductPropertiesTokenFn = createToken(ProductPropertiesSymbol);export const ProductSymbol = Symbol("Product");
+export const ProductProperties: ProductPropertiesTokenFn = createToken(ProductPropertiesSymbol);
+export const ProductSymbol = Symbol("Product");
 export type ProductToken = TokenVNodeBase<typeof ProductSymbol, Product>;
 export type ProductTokenFn = TokenVNodeFn<typeof ProductSymbol, Product>;
 export const Product: ProductTokenFn = createToken(ProductSymbol);

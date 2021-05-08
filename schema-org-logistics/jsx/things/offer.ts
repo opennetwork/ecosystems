@@ -1,4 +1,5 @@
-import { createToken, TokenVNodeBase, TokenVNodeFn } from "@opennetwork/vnode";import { Thing, ThingReference } from "./thing"
+import { createToken, TokenVNodeBase, TokenVNodeFn } from "@opennetwork/vnode";
+import { Thing, ThingReference } from "./thing"
 import { GeoShapeReference } from "./geo-shape"
 import { PlaceReference } from "./place"
 import { PaymentMethodReference } from "./payment-method"
@@ -74,13 +75,16 @@ export interface Offer extends OfferThing, OfferProperties {
 }
 
 export type OfferReference = OfferThing | Offer
+
 export const OfferThingSymbol = Symbol("OfferThing");
 export type OfferThingToken = TokenVNodeBase<typeof OfferThingSymbol, OfferThing>;
 export type OfferThingTokenFn = TokenVNodeFn<typeof OfferThingSymbol, OfferThing>;
-export const OfferThing: OfferThingTokenFn = createToken(OfferThingSymbol);export const OfferPropertiesSymbol = Symbol("OfferProperties");
+export const OfferThing: OfferThingTokenFn = createToken(OfferThingSymbol);
+export const OfferPropertiesSymbol = Symbol("OfferProperties");
 export type OfferPropertiesToken = TokenVNodeBase<typeof OfferPropertiesSymbol, OfferProperties>;
 export type OfferPropertiesTokenFn = TokenVNodeFn<typeof OfferPropertiesSymbol, OfferProperties>;
-export const OfferProperties: OfferPropertiesTokenFn = createToken(OfferPropertiesSymbol);export const OfferSymbol = Symbol("Offer");
+export const OfferProperties: OfferPropertiesTokenFn = createToken(OfferPropertiesSymbol);
+export const OfferSymbol = Symbol("Offer");
 export type OfferToken = TokenVNodeBase<typeof OfferSymbol, Offer>;
 export type OfferTokenFn = TokenVNodeFn<typeof OfferSymbol, Offer>;
 export const Offer: OfferTokenFn = createToken(OfferSymbol);

@@ -1,4 +1,5 @@
-import { createToken, TokenVNodeBase, TokenVNodeFn } from "@opennetwork/vnode";import { Thing, ThingReference } from "./thing"
+import { createToken, TokenVNodeBase, TokenVNodeFn } from "@opennetwork/vnode";
+import { Thing, ThingReference } from "./thing"
 import { URL } from "whatwg-url"
 import { AudienceReference } from "./audience"
 import { BrandReference } from "./brand"
@@ -43,13 +44,16 @@ export interface Service extends ServiceThing, ServiceProperties {
 
 export type ServiceReference = ServiceThing | Service
 
+
 export const ServiceThingSymbol = Symbol("ServiceThing");
 export type ServiceThingToken = TokenVNodeBase<typeof ServiceThingSymbol, ServiceThing>;
 export type ServiceThingTokenFn = TokenVNodeFn<typeof ServiceThingSymbol, ServiceThing>;
-export const ServiceThing: ServiceThingTokenFn = createToken(ServiceThingSymbol);export const ServicePropertiesSymbol = Symbol("ServiceProperties");
+export const ServiceThing: ServiceThingTokenFn = createToken(ServiceThingSymbol);
+export const ServicePropertiesSymbol = Symbol("ServiceProperties");
 export type ServicePropertiesToken = TokenVNodeBase<typeof ServicePropertiesSymbol, ServiceProperties>;
 export type ServicePropertiesTokenFn = TokenVNodeFn<typeof ServicePropertiesSymbol, ServiceProperties>;
-export const ServiceProperties: ServicePropertiesTokenFn = createToken(ServicePropertiesSymbol);export const ServiceSymbol = Symbol("Service");
+export const ServiceProperties: ServicePropertiesTokenFn = createToken(ServicePropertiesSymbol);
+export const ServiceSymbol = Symbol("Service");
 export type ServiceToken = TokenVNodeBase<typeof ServiceSymbol, Service>;
 export type ServiceTokenFn = TokenVNodeFn<typeof ServiceSymbol, Service>;
 export const Service: ServiceTokenFn = createToken(ServiceSymbol);

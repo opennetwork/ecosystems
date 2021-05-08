@@ -1,4 +1,5 @@
-import { createToken, TokenVNodeBase, TokenVNodeFn } from "@opennetwork/vnode";import { Thing } from "./thing"
+import { createToken, TokenVNodeBase, TokenVNodeFn } from "@opennetwork/vnode";
+import { Thing } from "./thing"
 import { OfferReference } from "./offer"
 import { AggregateOfferReference } from "./aggregate-offer"
 import { PartyReference } from "./party"
@@ -30,10 +31,12 @@ export interface Order extends OrderThing {
 }
 
 export type OrderReference = OrderThing | Order
+
 export const OrderThingSymbol = Symbol("OrderThing");
 export type OrderThingToken = TokenVNodeBase<typeof OrderThingSymbol, OrderThing>;
 export type OrderThingTokenFn = TokenVNodeFn<typeof OrderThingSymbol, OrderThing>;
-export const OrderThing: OrderThingTokenFn = createToken(OrderThingSymbol);export const OrderSymbol = Symbol("Order");
+export const OrderThing: OrderThingTokenFn = createToken(OrderThingSymbol);
+export const OrderSymbol = Symbol("Order");
 export type OrderToken = TokenVNodeBase<typeof OrderSymbol, Order>;
 export type OrderTokenFn = TokenVNodeFn<typeof OrderSymbol, Order>;
 export const Order: OrderTokenFn = createToken(OrderSymbol);

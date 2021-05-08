@@ -1,4 +1,5 @@
-import { createToken, TokenVNodeBase, TokenVNodeFn } from "@opennetwork/vnode";import { Thing } from "./thing"
+import { createToken, TokenVNodeBase, TokenVNodeFn } from "@opennetwork/vnode";
+import { Thing } from "./thing"
 import { URL } from "whatwg-url"
 import { PostalAddressReference } from "./postal-address"
 import { DeliveryEventReference } from "./delivery-event"
@@ -26,10 +27,12 @@ export interface ParcelDelivery extends ParcelDeliveryThing {
 
 export type ParcelDeliveryReference = ParcelDelivery
 
+
 export const ParcelDeliveryThingSymbol = Symbol("ParcelDeliveryThing");
 export type ParcelDeliveryThingToken = TokenVNodeBase<typeof ParcelDeliveryThingSymbol, ParcelDeliveryThing>;
 export type ParcelDeliveryThingTokenFn = TokenVNodeFn<typeof ParcelDeliveryThingSymbol, ParcelDeliveryThing>;
-export const ParcelDeliveryThing: ParcelDeliveryThingTokenFn = createToken(ParcelDeliveryThingSymbol);export const ParcelDeliverySymbol = Symbol("ParcelDelivery");
+export const ParcelDeliveryThing: ParcelDeliveryThingTokenFn = createToken(ParcelDeliveryThingSymbol);
+export const ParcelDeliverySymbol = Symbol("ParcelDelivery");
 export type ParcelDeliveryToken = TokenVNodeBase<typeof ParcelDeliverySymbol, ParcelDelivery>;
 export type ParcelDeliveryTokenFn = TokenVNodeFn<typeof ParcelDeliverySymbol, ParcelDelivery>;
 export const ParcelDelivery: ParcelDeliveryTokenFn = createToken(ParcelDeliverySymbol);
