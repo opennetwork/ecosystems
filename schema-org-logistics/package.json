@@ -16,11 +16,20 @@
     "node": ">=14.1.0"
   },
   "dependencies": {
-    "@opennetwork/environment": "^1.0.2",
     "whatwg-url": "^8.1.0"
   },
   "devDependencies": {
+    "@opennetwork/progressive-merge": "^5.5.0",
+    "@opennetwork/vnode": "^27.0.1",
     "@types/whatwg-url": "^6.4.0",
-    "filehound": "^1.17.4"
+    "filehound": "^1.17.4",
+    "iterable": "^5.7.0",
+    "microtask-collector": "^3.1.0",
+    "typescript": "^4.2.4"
+  },
+  "peerDependencies": {
+    "@opennetwork/vnode": "^27.0.1",
+    "iterable": "^5.7.0",
+    "microtask-collector": "^3.1.0"
   }
 }
